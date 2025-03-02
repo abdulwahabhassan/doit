@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C2BC5742D73F76F002B9169 /* PlaywriteITModerna-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5C2BC5732D73F76F002B9169 /* PlaywriteITModerna-VariableFont_wght.ttf */; };
+		5C2BC5792D751239002B9169 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC5782D751239002B9169 /* Card.swift */; };
+		5C2BC57B2D75126E002B9169 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC57A2D75126E002B9169 /* Header.swift */; };
+		5C2BC57D2D751297002B9169 /* InProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC57C2D751297002B9169 /* InProgress.swift */; };
+		5C2BC57F2D751304002B9169 /* TaskGroups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC57E2D751304002B9169 /* TaskGroups.swift */; };
+		5C2BC5812D751332002B9169 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC5802D751332002B9169 /* Models.swift */; };
+		5C2BC5832D7513D9002B9169 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC5822D7513D9002B9169 /* HomeView.swift */; };
+		5C2BC5852D7516CB002B9169 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC5842D7516CB002B9169 /* CalendarView.swift */; };
+		5C2BC5872D7516E2002B9169 /* NotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC5862D7516E2002B9169 /* NotesView.swift */; };
+		5C2BC5892D7516F6002B9169 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC5882D7516F6002B9169 /* ProfileView.swift */; };
+		5C2BC58B2D752325002B9169 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2BC58A2D752325002B9169 /* BackgroundView.swift */; };
 		5C5B4BA72D6DA8D40038366F /* DoitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B4BA62D6DA8D40038366F /* DoitApp.swift */; };
 		5C5B4BA92D6DA8D40038366F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B4BA82D6DA8D40038366F /* ContentView.swift */; };
 		5C5B4BAB2D6DA8D40038366F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B4BAA2D6DA8D40038366F /* Item.swift */; };
@@ -15,6 +26,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C2BC5732D73F76F002B9169 /* PlaywriteITModerna-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PlaywriteITModerna-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		5C2BC5752D73F861002B9169 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5C2BC5782D751239002B9169 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		5C2BC57A2D75126E002B9169 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		5C2BC57C2D751297002B9169 /* InProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InProgress.swift; sourceTree = "<group>"; };
+		5C2BC57E2D751304002B9169 /* TaskGroups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskGroups.swift; sourceTree = "<group>"; };
+		5C2BC5802D751332002B9169 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		5C2BC5822D7513D9002B9169 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5C2BC5842D7516CB002B9169 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		5C2BC5862D7516E2002B9169 /* NotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesView.swift; sourceTree = "<group>"; };
+		5C2BC5882D7516F6002B9169 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5C2BC58A2D752325002B9169 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		5C5B4BA32D6DA8D40038366F /* Doit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C5B4BA62D6DA8D40038366F /* DoitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoitApp.swift; sourceTree = "<group>"; };
 		5C5B4BA82D6DA8D40038366F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,11 +76,23 @@
 		5C5B4BA52D6DA8D40038366F /* Doit */ = {
 			isa = PBXGroup;
 			children = (
+				5C2BC5752D73F861002B9169 /* Info.plist */,
+				5C2BC5882D7516F6002B9169 /* ProfileView.swift */,
+				5C2BC5862D7516E2002B9169 /* NotesView.swift */,
 				5C5B4BA62D6DA8D40038366F /* DoitApp.swift */,
 				5C5B4BA82D6DA8D40038366F /* ContentView.swift */,
 				5C5B4BAA2D6DA8D40038366F /* Item.swift */,
 				5C5B4BAC2D6DA8D60038366F /* Assets.xcassets */,
+				5C2BC5732D73F76F002B9169 /* PlaywriteITModerna-VariableFont_wght.ttf */,
 				5C5B4BAE2D6DA8D60038366F /* Preview Content */,
+				5C2BC5782D751239002B9169 /* Card.swift */,
+				5C2BC57A2D75126E002B9169 /* Header.swift */,
+				5C2BC57C2D751297002B9169 /* InProgress.swift */,
+				5C2BC57E2D751304002B9169 /* TaskGroups.swift */,
+				5C2BC5802D751332002B9169 /* Models.swift */,
+				5C2BC5822D7513D9002B9169 /* HomeView.swift */,
+				5C2BC5842D7516CB002B9169 /* CalendarView.swift */,
+				5C2BC58A2D752325002B9169 /* BackgroundView.swift */,
 			);
 			path = Doit;
 			sourceTree = "<group>";
@@ -128,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2BC5742D73F76F002B9169 /* PlaywriteITModerna-VariableFont_wght.ttf in Resources */,
 				5C5B4BB02D6DA8D60038366F /* Preview Assets.xcassets in Resources */,
 				5C5B4BAD2D6DA8D60038366F /* Assets.xcassets in Resources */,
 			);
@@ -140,9 +176,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C2BC5852D7516CB002B9169 /* CalendarView.swift in Sources */,
+				5C2BC5832D7513D9002B9169 /* HomeView.swift in Sources */,
+				5C2BC58B2D752325002B9169 /* BackgroundView.swift in Sources */,
+				5C2BC57B2D75126E002B9169 /* Header.swift in Sources */,
 				5C5B4BA92D6DA8D40038366F /* ContentView.swift in Sources */,
+				5C2BC5892D7516F6002B9169 /* ProfileView.swift in Sources */,
 				5C5B4BAB2D6DA8D40038366F /* Item.swift in Sources */,
+				5C2BC5812D751332002B9169 /* Models.swift in Sources */,
+				5C2BC5872D7516E2002B9169 /* NotesView.swift in Sources */,
+				5C2BC57D2D751297002B9169 /* InProgress.swift in Sources */,
 				5C5B4BA72D6DA8D40038366F /* DoitApp.swift in Sources */,
+				5C2BC57F2D751304002B9169 /* TaskGroups.swift in Sources */,
+				5C2BC5792D751239002B9169 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +325,7 @@
 				DEVELOPMENT_TEAM = 67RPW54Z4R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Doit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +355,7 @@
 				DEVELOPMENT_TEAM = 67RPW54Z4R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Doit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
