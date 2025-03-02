@@ -27,7 +27,7 @@ struct TaskGroups: View {
             ScrollView(.vertical) {
                 LazyVStack(alignment: .center, spacing: 8, content: {
                     ForEach(taskGroupItems, id: \.self) { item in
-                        TaskGroup(foregroundColor: item.foregroundColor, backgroundColor: item.backgroundColor, systemImage: item.systemImage)
+                        TaskGroup(foregroundColor: item.foregroundColor, backgroundColor: item.backgroundColor, systemImage: item.systemImage, title: item.title, taskCount: item.taskCount)
                     }
                 })
                 .padding(.horizontal)
@@ -46,6 +46,8 @@ struct TaskGroup: View {
     let foregroundColor: Color
     let backgroundColor: Color
     let systemImage: String
+    let title: String
+    let taskCount: Int
     
     var body: some View {
         HStack() {
@@ -58,12 +60,12 @@ struct TaskGroup: View {
                 )
             
             VStack(alignment: .leading, spacing: 2) {
-                Text("Office Projects")
+                Text(title)
                     .font(.caption2)
                     .foregroundStyle(.black)
                 
                 
-                Text("23 Tasks")
+                Text("\(taskCount) Tasks")
                     .font(.caption2)
                     .foregroundStyle(.gray)
             }.padding(.leading, 8)
@@ -101,6 +103,7 @@ struct TaskGroup: View {
 }
 
 #Preview("TaskGroup") {
-    TaskGroup(foregroundColor: .appPink, backgroundColor: .appLightPink, systemImage: "handbag.fill")
+    TaskGroup(foregroundColor: .appPink, backgroundColor: .appLightPink, systemImage: "handbag.fill", title: "Office Projects",
+              taskCount: 23)
 }
 

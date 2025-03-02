@@ -43,23 +43,31 @@ struct TaskGroupItem: Hashable {
     let foregroundColor: Color
     let backgroundColor: Color
     let systemImage: String
+    let title: String
+    let taskCount: Int
 }
 
 let taskGroupItems = [
     TaskGroupItem(
         foregroundColor: .appPink,
         backgroundColor: .appLightPink,
-        systemImage: "handbag.fill"
+        systemImage: "handbag.fill",
+        title: "Office Projects",
+        taskCount: 23
     ),
     TaskGroupItem(
         foregroundColor: .appPurple,
         backgroundColor: .appLightPurple,
-        systemImage: "person.crop.rectangle.stack.fill"
+        systemImage: "person.crop.rectangle.stack.fill",
+        title: "Other Projects",
+        taskCount: 4
     ),
     TaskGroupItem(
         foregroundColor: .appOrange,
         backgroundColor: .appLightOrange,
-        systemImage: "book.pages.fill"
+        systemImage: "book.pages.fill",
+        title: "Personal Projects",
+        taskCount: 10
     )
     
 ]
