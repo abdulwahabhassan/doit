@@ -25,16 +25,28 @@ struct InProgressSection: View {
                 Spacer()
             }
             .padding(.horizontal)
-            ScrollView(.horizontal) {
-                LazyHStack(alignment: .top, spacing: 16, content: {
-                    ForEach(inProgressCardItems, id: \.self) { item in
-                        InProgressCard(category: item.category, text: item.text, systemImage: item.systemImage, backgroundColor: item.backgroundColor, progressColor: item.progressColor, iconBgColor: item.iconBgColor, iconColor: item.iconColor)
-                    }
-                }).padding(.horizontal)
-            }
-            .scrollIndicators(.hidden)
-            .frame(height: 110)
-            
+            ScrollViewReader(content: { proxy in
+                ScrollView(.horizontal) {
+                    LazyHStack(alignment: .center, spacing: 0, content: {
+                        ForEach(inProgressCardItems, id: \.self) { item in
+                            InProgressCard(category: item.category, text: item.text, systemImage: item.systemImage, backgroundColor: item.backgroundColor, progressColor: item.progressColor, iconBgColor: item.iconBgColor, iconColor: item.iconColor)
+                        }
+                        Button {
+                            if let firstItem = inProgressCardItems.first {
+                                proxy.scrollTo(firstItem, anchor: .leading)
+                            }
+                        } label: {
+                            Image(systemName: "arrowshape.turn.up.backward.2")
+                                .imageScale(.small)
+                                .foregroundStyle(.appPurple)
+                                .padding(.leading)
+                        }
+                    })
+                    .padding(.trailing)
+                }
+                .scrollIndicators(.hidden)
+                .frame(height: 110)
+            })
         }
     }
 }
@@ -86,6 +98,7 @@ struct InProgressCard: View {
         .padding(.top, 16)
         .background(in: RoundedRectangle(cornerRadius: 16))
         .backgroundStyle(backgroundColor)
+        .padding(.leading)
         .frame(maxWidth: 250)
     }
 }

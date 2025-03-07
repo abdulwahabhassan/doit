@@ -20,7 +20,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
-
             NotesView()
                 .tabItem {
                     Label("Notes", systemImage: "books.vertical.fill")
@@ -29,9 +28,8 @@ struct ContentView: View {
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }
-        }.background(.thickMaterial)
+        }
         .tint(.appPurple)
-            
     }
 }
 

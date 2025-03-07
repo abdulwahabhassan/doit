@@ -7,33 +7,74 @@
 
 import SwiftUI
 
+enum Columns: Int {
+    case One = 1
+    case Two = 2
+}
+
 struct TaskGroups: View {
+    @State private var columns: Columns = Columns.One
+    
     var body: some View {
         VStack(alignment: .leading) {
-            HStack {
-                Text("Task Groups")
-                    .font(.subheadline)
-                    .bold()
-                
-                Text("3")
-                    .font(.caption2)
-                    .padding(8)
-                    .foregroundStyle(.appPurple)
-                    .background(in: Circle())
-                    .backgroundStyle(.appPurple.opacity(0.1))
-                
+            HStack(alignment: .center) {
+                HStack(alignment: .center) {
+                    Text("Task Groups")
+                        .font(.subheadline)
+                        .bold()
+                    
+                    Text("3")
+                        .font(.caption2)
+                        .padding(8)
+                        .foregroundStyle(.appPurple)
+                        .background(in: Circle())
+                        .backgroundStyle(.appPurple.opacity(0.1))
+                }
                 Spacer()
+                Button {
+                    switch columns {
+                    case .One:
+                        columns = .Two
+                    case .Two:
+                        columns = .One
+                    }
+                } label: {
+                    let iconName = switch columns {
+                    case .One:
+                        "rectangle.grid.2x2"
+                    case .Two:
+                        "rectangle.grid.1x2"
+                    }
+                    Image(systemName: iconName)
+                        .foregroundStyle(.appPurple)
+                        .imageScale(.small)
+                }
+                
             }.padding(.horizontal)
             ScrollView(.vertical) {
-                LazyVStack(alignment: .center, spacing: 8, content: {
+                LazyVGrid(columns: Array(
+                    repeating: GridItem(.adaptive(minimum: .infinity)),
+                    count: columns.rawValue
+                ), content: {
                     ForEach(taskGroupItems, id: \.self) { item in
-                        TaskGroup(foregroundColor: item.foregroundColor, backgroundColor: item.backgroundColor, systemImage: item.systemImage, title: item.title, taskCount: item.taskCount)
+                        TaskGroup(
+                            foregroundColor: item.foregroundColor,
+                            backgroundColor: item.backgroundColor,
+                            systemImage: item.systemImage,
+                            title: item.title,
+                            taskCount: item.taskCount
+                        )
+                        .scaledToFit()
+                        .scrollTransition(axis: .vertical) { effect, phase in
+                            effect.opacity(phase.isIdentity ? 1 : 0)
+                        }
                     }
                 })
                 .padding(.horizontal)
             }
             .scrollIndicators(.hidden)
         }
+        .padding(.vertical, 8)
     }
 }
 
