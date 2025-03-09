@@ -20,8 +20,7 @@ struct Header: View {
                     Text("Hello!")
                         .font(.caption)
                     Text("Hassan Abdulwahab")
-                        .font(.subheadline)
-                        .bold()
+                        .font(.headline)
                 }
             }
             Spacer()

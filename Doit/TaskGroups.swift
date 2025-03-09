@@ -20,8 +20,7 @@ struct TaskGroups: View {
             HStack(alignment: .center) {
                 HStack(alignment: .center) {
                     Text("Task Groups")
-                        .font(.subheadline)
-                        .bold()
+                        .font(.headline)
                     
                     Text("3")
                         .font(.caption2)
@@ -51,6 +50,7 @@ struct TaskGroups: View {
                 }
                 
             }.padding(.horizontal)
+
             ScrollView(.vertical) {
                 LazyVGrid(columns: Array(
                     repeating: GridItem(.adaptive(minimum: .infinity)),
@@ -93,21 +93,18 @@ struct TaskGroup: View {
     var body: some View {
         HStack() {
             Image(systemName: systemImage)
-                .resizable()
-                .frame(width: 16, height: 16)
+                .dynamicTypeSize(.small)
                 .foregroundColor(foregroundColor)
                 .padding(8)
-                .background(backgroundColor, in: RoundedRectangle(cornerRadius: 10)
-                )
+                .background(backgroundColor, in: RoundedRectangle(cornerRadius: 10))
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(title)
-                    .font(.caption2)
-                    .foregroundStyle(.black)
-                
+                    .font(.subheadline)
+                    .fontWeight(.medium)
                 
                 Text("\(taskCount) Tasks")
-                    .font(.caption2)
+                    .font(.caption)
                     .foregroundStyle(.gray)
             }.padding(.leading, 8)
             
@@ -127,16 +124,15 @@ struct TaskGroup: View {
                 
                 Text("70%")
                     .foregroundStyle(.black)
-                    .font(Font.system(size: 12, weight: .regular))
+                    .font(.caption2)
                     .bold()
                 
             }
             .frame(width: 40, height: 40)
             
         }
-        .padding(.horizontal, 16)
-        .padding( .vertical, 12)
-        .background(in: RoundedRectangle(cornerRadius: 25.0))
+        .padding(16)
+        .background(in: RoundedRectangle(cornerRadius: 16))
         .backgroundStyle(.white)
         
         

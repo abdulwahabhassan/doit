@@ -13,12 +13,12 @@ struct Card: View {
         HStack() {
             VStack(alignment: .leading, spacing: 24) {
                 Text("Your today's task almost done!")
-                    .font(.caption2)
+                    .font(.subheadline)
                     .foregroundStyle(.white)
                 
                 Button(action: {}, label: {
                     Text("View Task")
-                        .font(.caption2)
+                        .font(.caption)
                         .foregroundStyle(.appPurple)
                         .bold()
                 })
@@ -58,7 +58,7 @@ struct Card: View {
             }.padding()
         }
         .padding(.vertical, 10)
-        .background(in: RoundedRectangle(cornerRadius: 25.0))
+        .background(in: RoundedRectangle(cornerRadius: 24))
         .backgroundStyle(.appPurple)
         .padding(.vertical, 10)
     }

@@ -18,7 +18,7 @@ struct InProgressCardItem: Hashable {
     
 }
 
-let inProgressCardItems = [
+let inProgressCardItems: [InProgressCardItem] = [
     InProgressCardItem(
         category: "Office Project",
         text: "Grocery shopping app design",
@@ -39,7 +39,10 @@ let inProgressCardItems = [
     )
 ]
 
-struct TaskGroupItem: Hashable {
+
+
+struct TaskGroupItem: Hashable, Identifiable {
+    var id: Self { self }
     let foregroundColor: Color
     let backgroundColor: Color
     let systemImage: String
@@ -47,7 +50,7 @@ struct TaskGroupItem: Hashable {
     let taskCount: Int
 }
 
-let taskGroupItems = [
+var taskGroupItems: [TaskGroupItem] = [
     TaskGroupItem(
         foregroundColor: .appPink,
         backgroundColor: .appLightPink,
@@ -70,4 +73,44 @@ let taskGroupItems = [
         taskCount: 10
     )
     
+]
+
+struct TaskItem: Hashable {
+    var id: Self { self }
+    let title: String
+    let description: String
+    let startDate: Date
+    let endDate: Date
+}
+
+@Observable 
+class TaskItemObservable: Identifiable {
+    var id: Self { self }
+    var title: String
+    var description: String
+    var startDate: Date
+    var endDate: Date
+    
+    init(title: String, description: String, startDate: Date, endDate: Date) {
+        self.title = title
+        self.description = description
+        self.startDate = startDate
+        self.endDate = endDate
+    }
+    
+    static let shared: TaskItemObservable = TaskItemObservable(
+        title: "Grocery Shopping App ",
+        description: "This application is designed for super shops. By using this application they can enlist all their products in one place and can deliver. Customers will get a one-stop solution for their daily shopping.",
+        startDate: Date(),
+        endDate: Date())
+}
+
+
+let taskItems: [TaskItem] = [
+    TaskItem(
+        title: "Grocery Shopping App",
+        description: "This application is designed for super shops. By using this application they can enlist all their products in one place and can deliver. Customers will get a one-stop solution for their daily shopping. This application is designed for super shops. By using this application they can enlist all their products in one place and can deliver. Customers will get a one-stop solution for their daily shopping. This application is designed for super shops. By using this application they can enlist all their products in one place and can deliver. Customers will get a one-stop solution for their daily shopping.",
+        startDate: Date(),
+        endDate: Date()
+    )
 ]

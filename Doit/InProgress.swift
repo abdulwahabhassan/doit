@@ -12,11 +12,10 @@ struct InProgressSection: View {
         VStack(alignment: .leading) {
             HStack {
                 Text("In Progress")
-                    .font(.subheadline)
-                    .bold()
+                    .font(.headline)
                 
                 Text("6")
-                    .font(.caption2)
+                    .font(.caption)
                     .padding(8)
                     .foregroundStyle(.appPurple)
                     .background(in: Circle())
@@ -27,7 +26,7 @@ struct InProgressSection: View {
             .padding(.horizontal)
             ScrollViewReader(content: { proxy in
                 ScrollView(.horizontal) {
-                    LazyHStack(alignment: .center, spacing: 0, content: {
+                    LazyHStack(alignment: .center, spacing: -8, content: {
                         ForEach(inProgressCardItems, id: \.self) { item in
                             InProgressCard(category: item.category, text: item.text, systemImage: item.systemImage, backgroundColor: item.backgroundColor, progressColor: item.progressColor, iconBgColor: item.iconBgColor, iconColor: item.iconColor)
                         }
@@ -69,14 +68,13 @@ struct InProgressCard: View {
         VStack {
             HStack {
                 Text(category)
-                    .font(.caption2)
-                    .foregroundStyle(.gray)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
                     .lineLimit(1)
                 
                 Spacer()
                 Image(systemName: systemImage)
-                    .resizable()
-                    .frame(width: 16, height: 16)
+                    .dynamicTypeSize(.small)
                     .foregroundColor(iconColor)
                     .padding(6)
                     .background(iconBgColor, in: RoundedRectangle(cornerRadius: 10))
@@ -84,7 +82,8 @@ struct InProgressCard: View {
             }
             HStack {
                 Text(text)
-                    .font(.caption)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
                     .lineLimit(1)
                 Spacer()
             }
