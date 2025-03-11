@@ -7,24 +7,23 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct HomeScreen: View {
     var body: some View {
         ZStack {
-            BackgroundView()
+            MainBackgroundView()
             VStack {
                 Group {
-                    Header()
-                    Card()
+                    HeaderView()
+                    DashboardCardView()
                 }.padding(.horizontal)
                 
-                InProgressSection()
-                TaskGroups()
-                Spacer()
+                InProgressSectionView()
+                TaskGroupsView()
             }
         }
     }
 }
 
-#Preview("HomeView") {
-    HomeView()
+#Preview("HomeScreen") {
+    HomeScreen()
 }

@@ -12,7 +12,7 @@ enum Columns: Int {
     case Two = 2
 }
 
-struct TaskGroups: View {
+struct TaskGroupsView: View {
     @State private var columns: Columns = Columns.One
     
     var body: some View {
@@ -57,7 +57,7 @@ struct TaskGroups: View {
                     count: columns.rawValue
                 ), content: {
                     ForEach(taskGroupItems, id: \.self) { item in
-                        TaskGroup(
+                        TaskGroupView(
                             foregroundColor: item.foregroundColor,
                             backgroundColor: item.backgroundColor,
                             systemImage: item.systemImage,
@@ -74,15 +74,15 @@ struct TaskGroups: View {
             }
             .scrollIndicators(.hidden)
         }
-        .padding(.vertical, 8)
+        .padding(.top, 8)
     }
 }
 
-#Preview("TaskGroups") {
-    TaskGroups()
+#Preview("TaskGroupsView") {
+    TaskGroupsView()
 }
 
-struct TaskGroup: View {
+struct TaskGroupView: View {
     var progress: CGFloat = 0.7
     let foregroundColor: Color
     let backgroundColor: Color
@@ -139,8 +139,8 @@ struct TaskGroup: View {
     }
 }
 
-#Preview("TaskGroup") {
-    TaskGroup(foregroundColor: .appPink, backgroundColor: .appLightPink, systemImage: "handbag.fill", title: "Office Projects",
+#Preview("TaskGroupView") {
+    TaskGroupView(foregroundColor: .appPink, backgroundColor: .appLightPink, systemImage: "handbag.fill", title: "Office Projects",
               taskCount: 23)
 }
 

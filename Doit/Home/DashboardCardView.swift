@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Card: View {
+struct DashboardCardView: View {
     var progress: CGFloat = 0.7
     var body: some View {
         HStack() {
@@ -64,6 +64,6 @@ struct Card: View {
     }
 }
 
-#Preview("Card") {
-    Card().padding()
+#Preview("DashboardCardView") {
+    DashboardCardView().padding()
 }

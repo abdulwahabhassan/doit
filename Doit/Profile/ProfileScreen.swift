@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct ProfileScreen: View {
     var body: some View {
         Text("Profile")
     }
 }
 
-#Preview {
-    ProfileView()
+#Preview("ProfileScreen") {
+    ProfileScreen()
 }

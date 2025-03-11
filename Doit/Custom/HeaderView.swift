@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Header: View {
+struct HeaderView: View {
     var body: some View {
         HStack {
             HStack {
@@ -30,6 +30,6 @@ struct Header: View {
     }
 }
 
-#Preview("Header") {
-    Header().padding()
+#Preview("HeaderView") {
+    HeaderView().padding()
 }

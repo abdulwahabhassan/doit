@@ -9,22 +9,31 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemMaterial)
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
+    }
+    
     var body: some View {
         TabView {
-            HomeView()
+            HomeScreen()
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
-            CalendarView()
+            CalendarScreen()
                 .badge(10)
                 .tabItem {
                     Label("Calendar", systemImage: "calendar")
                 }
-            NotesView()
+            NotesScreen()
                 .tabItem {
                     Label("Notes", systemImage: "books.vertical.fill")
                 }
-            ProfileView()
+            ProfileScreen()
                 .tabItem {
                     Label("Settings", systemImage: "gear")
                 }

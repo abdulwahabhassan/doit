@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct InProgressSection: View {
+struct InProgressSectionView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -28,7 +28,7 @@ struct InProgressSection: View {
                 ScrollView(.horizontal) {
                     LazyHStack(alignment: .center, spacing: -8, content: {
                         ForEach(inProgressCardItems, id: \.self) { item in
-                            InProgressCard(category: item.category, text: item.text, systemImage: item.systemImage, backgroundColor: item.backgroundColor, progressColor: item.progressColor, iconBgColor: item.iconBgColor, iconColor: item.iconColor)
+                            InProgressCardView(category: item.category, text: item.text, systemImage: item.systemImage, backgroundColor: item.backgroundColor, progressColor: item.progressColor, iconBgColor: item.iconBgColor, iconColor: item.iconColor)
                         }
                         Button {
                             if let firstItem = inProgressCardItems.first {
@@ -51,11 +51,11 @@ struct InProgressSection: View {
 }
 
 
-#Preview("InProgressSection") {
-    InProgressSection()
+#Preview("InProgressSectionView") {
+    InProgressSectionView()
 }
 
-struct InProgressCard: View {
+struct InProgressCardView: View {
     let category: String
     let text: String
     let systemImage: String
@@ -102,6 +102,6 @@ struct InProgressCard: View {
     }
 }
 
-#Preview("InProgressCard") {
-    InProgressCard(category: "Office Project", text: "Grocery shopping app design", systemImage: "handbag.fill", backgroundColor: .appLightBlue, progressColor: .appBlue, iconBgColor: .appLightPink, iconColor: .appPink)
+#Preview("InProgressCardView") {
+    InProgressCardView(category: "Office Project", text: "Grocery shopping app design", systemImage: "handbag.fill", backgroundColor: .appLightBlue, progressColor: .appBlue, iconBgColor: .appLightPink, iconColor: .appPink)
 }

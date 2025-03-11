@@ -22,7 +22,7 @@ struct FileItem: Hashable, Identifiable, CustomStringConvertible {
 }
 
 
-struct TaskView: View {
+struct AddTaskScreen: View {
     
     @Bindable private var observableTaskItem: TaskItemObservable = TaskItemObservable.shared
     //    @State private var task: TaskItem = taskItems.first!
@@ -38,7 +38,7 @@ struct TaskView: View {
     
     var body: some View {
         ZStack {
-            BackgroundView()
+            MainBackgroundView()
             VStack {
                 HStack {
                     Button(action: {}, label: {
@@ -126,24 +126,23 @@ struct TaskView: View {
                     },
                     label: {
                         Text("Add Project")
-                            .frame(maxWidth: .infinity)
                             .font(.subheadline)
                             .foregroundStyle(.white)
                             .bold()
-                        
+                            .padding(12)
+                            .frame(maxWidth: .infinity)
+                            .background(.appPurple, in: RoundedRectangle(cornerRadius: 16))
                     }
                 )
-                .padding(12)
-                .background(.appPurple)
-                .background(in: RoundedRectangle(cornerRadius: 16))
                 .padding(16)
+                
             }
         }
     }
 }
 
-#Preview {
-    TaskView()
+#Preview("AddTaskScreen") {
+    AddTaskScreen()
 }
 
 
